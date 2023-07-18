@@ -1,33 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Root POM -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<!-- POM model version -->
 	<modelVersion>4.0.0</modelVersion>
 
-	<!-- Parent project (Inherits configurations from this parent) -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.6.2</version>
-		<relativePath/> <!-- Use relativePath for parent if not in the same directory -->
+		<relativePath/>
 	</parent>
 
-	<!-- Project Information -->
 	<groupId>tn.esprit.spring</groupId>
 	<artifactId>examen-dataCenter</artifactId>
 	<version>1.0</version>
 	<name>examen-dataCenter</name>
 	<description>Demo project for Spring Boot</description>
 
-	<!-- Properties section to define shared values -->
 	<properties>
 		<java.version>1.8</java.version>
 		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
 	</properties>
 
-	<!-- Dependencies section to declare project dependencies -->
 	<dependencies>
 		<!-- Spring Boot Starter Dependencies -->
 		<dependency>
@@ -56,6 +50,12 @@
 			<groupId>com.sun.mail</groupId>
 			<artifactId>javax.mail</artifactId>
 			<version>1.6.2</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.quartz-scheduler</groupId>
+					<artifactId>quartz</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 		<!-- SendGrid -->
@@ -109,7 +109,6 @@
 		</dependency>
 	</dependencies>
 
-	<!-- Build section to configure build plugins and tasks -->
 	<build>
 		<plugins>
 			<!-- Spring Boot Maven Plugin -->
