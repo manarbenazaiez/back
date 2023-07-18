@@ -58,7 +58,7 @@
 			</exclusions>
 		</dependency>
 
-		<!-- SendGrid -->
+
 		<dependency>
 			<groupId>com.sendgrid</groupId>
 			<artifactId>sendgrid-java</artifactId>
