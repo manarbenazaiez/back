@@ -53,7 +53,7 @@
 			<exclusions>
 				<exclusion>
 					<groupId>org.quartz-scheduler</groupId>
-					<artifactId>quartz</artifactId>
+					<artifactId>quartz</artifactId> <!-- Specify the correct artifactId here -->
 				</exclusion>
 			</exclusions>
 		</dependency>
